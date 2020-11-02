@@ -1,4 +1,8 @@
-
+/*
+Addison Hoff
+11/1/20
+A stack data structure composed of nodes.
+*/
 public class Stack<T> {
     private int size;
     private StackNode topNode;
@@ -14,16 +18,23 @@ public class Stack<T> {
     }
 
     public T pop() {
-        T obj = topNode.getObj();
+        T obj = (T) topNode.getObj();
         topNode = topNode.getChild();
         size--;
         return obj;
     }
+
+    public boolean isEmpty() {
+        return topNode == null;
+    }
+
+    public int size() {
+        return size;
+    }
+
+    public T peek() {
+        return (T) topNode.getObj();
+    }
     
 }
 
-//    void push(E element)    //add an element
-//    E pop()                 //remove and return the top element
-//    boolean isEmpty()
-//    int size()
-//    E peek()                //look at the top element without removing
